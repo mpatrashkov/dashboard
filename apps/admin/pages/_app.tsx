@@ -1,6 +1,11 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
+import './styles.scss';
+
+import { Nunito } from '@next/font/google';
+import classNames from 'classnames';
+
+const nunito = Nunito();
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -8,7 +13,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to admin!</title>
       </Head>
-      <main className="app">
+      <main className={classNames(nunito.className, 'app')}>
         <Component {...pageProps} />
       </main>
     </>
